@@ -1,11 +1,18 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Text, TextInput, TouchableWithoutFeedback as TWF, Alert} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  TextInput,
+  TouchableWithoutFeedback as TWF,
+  Alert,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 class AddComment extends Component {
   state = {
     comment: '',
-    editMode: true,
+    editMode: false,
   };
 
   handleAddComment = () => {
