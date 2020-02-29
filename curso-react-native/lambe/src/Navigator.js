@@ -10,8 +10,9 @@ const MenuRoutes = {
     screen: Feed,
     navigationOptions: {
       title: 'Feed',
-      tabBarIcon: ({tintColor}) =>
+      tabBarIcon: ({tintColor}) => (
         <Icon name="home" size={30} color={tintColor} />
+      ),
     },
   },
   Add: {
@@ -19,8 +20,9 @@ const MenuRoutes = {
     screen: Feed,
     navigationOptions: {
       tintle: 'Add Picture',
-      tabBarIcon: ({tintColor}) => 
+      tabBarIcon: ({tintColor}) => (
         <Icon name="camera" size={30} color={tintColor} />
+      ),
     },
   },
   Profile: {
@@ -28,15 +30,16 @@ const MenuRoutes = {
     screen: Feed,
     navigationOptions: {
       tintle: 'Profile',
-      tabBarIcon: ({tintColor: color}) => 
+      tabBarIcon: ({tintColor: color}) => (
         <Icon name="user" size={30} color={color} />
+      ),
     },
   },
 };
 
 const MenuConfig = {
   initialRouteName: 'Feed',
-  tabBarOption: {
+  tabBarOptions: {
     showLabel: false,
   },
 };
