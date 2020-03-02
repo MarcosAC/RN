@@ -3,7 +3,9 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {Gravatar} from 'react-native-gravatar';
 
 class Profile extends Component {
-  logout = () => {};
+  logout = () => {
+    this.props.navigation.navigate('Auth');
+  };
 
   render() {
     const options = {email: 'marcos@email.com.br', secure: true};
