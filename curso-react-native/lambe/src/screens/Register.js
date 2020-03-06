@@ -7,23 +7,26 @@ import {
   TextInput,
 } from 'react-native';
 
-class Login extends Component {
+class Register extends Component {
   state = {
+    name: '',
     email: '',
     password: '',
-  };
-
-  login = () => {
-    this.props.navigation.navigate('Profile');
   };
 
   render() {
     return (
       <View style={styles.container}>
         <TextInput
-          placeholder="Email"
+          placeholder="Nome"
           style={styles.input}
           autoFocus={true}
+          value={this.state.name}
+          onChangeText={name => this.setState({name})}
+        />
+        <TextInput
+          placeholder="Email"
+          style={styles.input}
           keyboardType="email-address"
           value={this.state.email}
           onChangeText={email => this.setState({email})}
@@ -35,15 +38,8 @@ class Login extends Component {
           value={this.state.password}
           onChangeText={password => this.setState({password})}
         />
-        <TouchableOpacity onPress={this.login} style={styles.buttom}>
-          <Text style={styles.buttonText}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => {
-            this.props.navigation.navigate('Register');
-          }}
-          style={styles.buttom}>
-          <Text style={styles.buttonText}>Criar nova conta.</Text>
+        <TouchableOpacity onPress={() => {}} style={styles.buttom}>
+          <Text style={styles.buttomText}>Salvar</Text>
         </TouchableOpacity>
       </View>
     );
@@ -61,7 +57,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#4286F4',
   },
-  buttonText: {
+  buttomText: {
     fontSize: 20,
     color: '#FFF',
   },
@@ -72,7 +68,8 @@ const styles = StyleSheet.create({
     height: 40,
     borderWidth: 1,
     borderColor: '#333',
+    paddingLeft: 15,
   },
 });
 
-export default Login;
+export default Register;
