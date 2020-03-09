@@ -1,6 +1,5 @@
-import {cresteStore, combineReducers} from 'redux';
+import {createStore, combineReducers} from 'redux';
 import userReducer from './reducers/userReducers';
-import {createStore} from 'redux';
 
 const reducers = combineReducers({
   user: userReducer,
