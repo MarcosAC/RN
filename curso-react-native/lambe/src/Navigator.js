@@ -28,7 +28,7 @@ const LoginOrProfileRouter = createSwitchNavigator(
     Auth: authRouter,
   },
   {
-    initialRouteName: 'Profile',
+    initialRouteName: 'Auth',
   },
 );
 
