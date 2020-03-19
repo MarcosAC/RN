@@ -1,8 +1,10 @@
 import {createStore, combineReducers} from 'redux';
-import userReducer from './reducers/userReducers';
+import userReducers from './reducers/userReducers';
+import postsReducers from './reducers/postsReducers';
 
 const reducers = combineReducers({
-  user: userReducer,
+  user: userReducers,
+  posts: postsReducers,
 });
 
 const storeConfig = () => {
