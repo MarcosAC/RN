@@ -14,6 +14,8 @@ import {
 } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 
+const noUser = 'Você precisa estar logada para adicionar imagens.';
+
 class AddPhoto extends Component {
   state = {
     image: null,
@@ -21,6 +23,11 @@ class AddPhoto extends Component {
   };
 
   pickImage = () => {
+    if (!this.props.name) {
+      Alert.alert('Falha!', noUser);
+      return;
+    }
+
     ImagePicker.showImagePicker(
       {
         title: 'Escolha a image',
@@ -36,6 +43,11 @@ class AddPhoto extends Component {
   };
 
   save = async () => {
+    if (!this.props.name) {
+      Alert.alert('Falha!', noUser);
+      return;
+    }
+
     this.props.onAddPost({
       id: Math.random(),
       nickname: this.props.name,
@@ -67,6 +79,7 @@ class AddPhoto extends Component {
           <TextInput
             placeholder="Algum comentário para a foto?"
             style={styles.input}
+            editable={this.props.name != null}
             value={this.state.comment}
             onChangeText={comment => this.setState({comment})}
           />
